@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">    
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="shortcut icon" href="{{ "/favicon.ico" | prepend: site.baseurl }}">
+
+    <!-- CSS -->
+    <!-- Bootstrap core CSS -->
+    <link href="{{ site.baseurl }}/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+    <!-- Font Awesome CSS -->
+    <link href="{{ site.baseurl }}/assets/css/all.css" rel="stylesheet" media="screen">
+
+    <!--[if lte IE 7]> 
+        <script src="{{ site.baseurl }}/assets/js/icons-lte-ie7.js"></script>
+    <![endif]-->
+
+    <!-- Magnific-popup lightbox -->
+    <link href="{{ site.baseurl }}/assets/css/magnific-popup.css" rel="stylesheet">
+
+    <!-- Animate css -->
+    <link href="{{ site.baseurl }}/assets/css/animate.css" rel="stylesheet">
+
+    <!-- Custom styles CSS -->
+    <link href="{{ site.baseurl }}/assets/css/style.css" rel="stylesheet" media="screen">
+
+</head>
+
+<body id="home">
+
+    <!-- Preloader -->
+
+    <div class="Preloader">
+        <div class="lds-ripple"><div></div><div></div></div>
+    </div>
+    <!-- Navigation start -->
+
+    <header class="header" id="navbar-custom">
+        
+        <nav class="navbar navbar-expand-lg navbar-custom navbar-light ">
+            <div class="container">
+
+                <a class="navbar-brand  mr-auto " href="{{site.baseurl}}/index.html"><img src="{{site.baseurl}}/assets/images/logo.png"></a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div  class="collapse navbar-collapse" id="navbarToggler">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        {% for link in site.navigation %}
+                          {% assign current = nil %}
+                          {% if page.url == link.url %}
+                            {% assign current = 'nav-current' %}
+                          {% endif %}
+                          <li class="{{ current }}">
+                            <a class="nav-link {{ current }}" href="{{site.baseurl}}{{ link.url }}">{{ link.text }}</a>
+                          </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- Navigation end -->
+
+    {{content}}
+
+    {% include footer.html %}
+    
+    <script src="{{ site.baseurl }}/assets/js/jquery.js"></script>
+    <script src="{{ site.baseurl }}/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/imagesloaded.pkgd.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/jquery.shuffle.min.js"></script>
+    
+    <!-- Custom scripts -->
+    <script src="{{ site.baseurl }}/assets/js/custom.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/custom-shuffle-init.js"></script>
+</body>
+</html>

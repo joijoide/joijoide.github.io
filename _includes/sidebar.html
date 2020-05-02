@@ -1,0 +1,30 @@
+<aside class="aside">
+
+    {% if site.author_bio and site.author_name %}
+    <div class="panel sidebar-about-author">
+        <h2 class="panel-title mb-3">About {{ site.author_name }}</h2>
+        <p>{{ site.author_bio }}</p>
+        <a class="mt-1" href="{{ site.author_url }}" target="_blank"> {{ site.author_url }}</a>
+    </div>
+    {% endif %}
+
+    <div class="panel sidebar-recent-posts">
+        <h2 class="panel-title mb-3">Recent Posts</h2>
+        <ul>
+            {% for post in site.posts limit:5 %}
+            <li class="pb-3"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> <span>{{ post.date | date: "%B %-d, %Y" }}</span></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+    {% assign sortedTags = site_tags | split:',' | sort %}
+    <div class="panel sidebar-category">
+        <h2 class="panel-title mb-3">Tags</h2>
+        <div class="tagcloud">
+            {% for tag in sortedTags %}
+            <a href="{{site.baseurl}}/tags/#{{ tag | cgi_escape }}">{{ tag }}</a>
+            {% endfor %}
+        </div>
+    </div>
+</aside>

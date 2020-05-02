@@ -1,0 +1,72 @@
+---
+layout: default
+title: Blog
+---
+<!-- Blog start -->
+
+<section class="module blogDetail-page">
+    <div class="container">
+
+        <div class="module-header text-center">
+            <h2 class="module-title"> {{page.title}} </h2>
+        </div>
+
+
+        <!-- Blog Filter start-->
+
+        <div class="row">
+
+            <div class="col-sm-12">
+
+                <ul id="filter" class="filter text-center">
+                    <li class="active" data-group="all">All</li>
+                    {% assign categories = site.posts | map: 'category' | uniq %}
+                        {% for category in categories %}
+                        <li data-group="{{ category }}">{{ category }}</li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+
+        </div><!-- .row -->
+
+        <!-- Blog Filter end -->
+
+        <ul class="row list-items-container blog-wrapper">
+
+            {% for post in site.posts %}
+
+            <li class="col-lg-6 list-item" data-groups="all {{ post.category }}">
+
+                <div href="{{site.baseurl}}{{post.url}}" class="blogList">
+                    <div class="blogList-img">
+                        <img src="{{ "/assets/images/" | append: post.banner_preview | prepend: site.baseurl }}" alt="Blog Desc">
+                    </div>
+                    <a  href="{{site.baseurl}}{{post.url}}" class="post-desc">
+                        <div class="post-desc--head">
+                            <span class="post-ctgry">
+                               <i class="fas fa-th"></i> {{post.category}}
+                            </span>
+                            <span class="post-readTime">
+                                <i class="far fa-clock"></i>
+                                {{post.read_time}}
+                            </span>
+                        </div>
+                        <h2>{{post.title}}</h2>
+                        <div class="post-desc--foot">
+                            <span class="post-date" datetime="{{ post.date | date: "%Y-%m-%d" }}">Publised {{ post.date | date: "%B %-d, %Y" }}</span>
+                        </div>
+                    </a>
+                </div>
+
+            </li>
+
+            {% endfor %}
+
+
+        </ul><!-- .projects-container -->
+    </div><!-- .contaier -->
+
+</section>
+
+<!-- Blog start -->

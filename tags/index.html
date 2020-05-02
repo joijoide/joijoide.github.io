@@ -1,0 +1,39 @@
+---
+layout: default
+title: Archives
+---
+
+<section class="module blogArchives-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="module-header">
+                    <h2 class="module-title"> {{page.title}} </h2>
+                </div>
+
+                <div class="allTags-list">
+                    {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+                    {% assign sortedTags = site_tags | split:',' | sort %}
+                    {% for tag in sortedTags %}
+                    <a href="#{{ tag | cgi_escape }}">{{ tag }} </a>
+                    {% endfor %}
+                </div>
+
+                {% for tag in sortedTags %}
+                <div class="panel" id="{{ tag | cgi_escape }}">
+                    <h2 class="panel-title mb-3 ">{{ tag }}</h2>
+                    <ul>
+                    {% for post in site.tags[tag] %}
+                        <li class="pb-2"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> <span>{{ post.date | date: "%B %-d, %Y" }}</span></li>
+                    {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+
+
+            </div>
+            <div class="col-lg-4">
+                {% include sidebar.html %}
+            </div>
+    </div>
+</section>

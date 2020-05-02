@@ -1,0 +1,67 @@
+<footer>
+    <div class="container">
+        <div class="foot-social">
+            {% if site.facebook_username %}
+            <a href="https://www.facebook.com/{{ site.facebook_username }}">
+                <i class="fab fa-facebook-f"></i>
+                <span>Facebook</span>
+            </a>
+            {% endif %}
+
+            {% if site.twitter_username %}
+            <a href="https://twitter.com/{{ site.twitter_username }}">
+                <i class="fab fa-twitter"></i>
+                <span>Twitter</span>
+            </a>
+            {% endif %}
+
+            {% if site.googleplus_username %}
+            <a href="https://plus.google.com/{{ site.googleplus_username }}">
+                <i class="fab fa-google-plus-g"></i>
+                <span>Google+</span>
+            </a>
+            {% endif %}
+
+            {% if site.codepen_username %}
+            <a href="http://codepen.io/{{ site.codepen_username }}">
+                <i class="fab fa-codepen"></i>
+                <span>CodePen</span>
+            </a>
+            {% endif %}
+            
+            {% if site.dribbble_uername %}
+            <a href="https://dribbble.com/{{ site.dribbble_uername }}" >
+                <i class="fab fa-dribbble"></i>
+                <span>Dribbble</span>
+            </a>
+            {% endif %}
+
+            {% if site.instagram_username %}
+            <a href="http://instagram.com/{{ site.instagram_username }}" >
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+            {% endif %}
+
+            {% if site.pinterest_username %}
+            <a href="http://www.pinterest.com/{{ site.pinterest_username }}">
+                <i class="fab fa-pinterest-p"></i>
+                <span>Pinterest</span>
+            </a>
+            {% endif %}
+
+            {% if site.linkedin_username %}
+            <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+            {% endif %}
+            
+        </div>
+        <div class="copyright">2019 
+            &copy; <a href="{{ site.baseurl }}/">{{site.title}}</a>. All Rights Reserved. <br />
+
+            <a href="#home" id="BacktoTop" class="BacktoTop"><i class="fas fa-arrow-up"></i></a>
+        </div>
+    </div>
+</footer>

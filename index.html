@@ -1,1 +1,71 @@
-Hello World
+---
+layout: default
+---
+
+<div class="page-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="post-list">
+                    {% for post in paginator.posts %}
+                    <div class="post">
+                        {% if post.banner_image %}
+                        <div class="post-img">
+                            <img src="{{ "/assets/images/" | append: post.banner_image | prepend: site.baseurl }}" alt="{% if post.banner_image_alt %}{{ post.banner_image_alt }}{% else %}{{ post.title }} {% endif %}">
+                        </div>
+                        {% endif %}
+                        <div class="post-desc">
+                            <div class="post-desc--head">
+                                <span class="post-ctgry">
+                                   <i class="fas fa-th"></i> {{post.category}}
+                                </span>
+                                <span class="post-readTime">
+                                    <i class="far fa-clock"></i>
+                                    {{post.read_time}}
+                                </span>
+                            </div>
+                            <a class="post-desc-title" href="{{site.baseurl}}{{post.url}}"><h2>{{post.title}}</h2></a>
+                            <div class="post-desc--foot">
+                                <a href="{{site.baseurl}}{{post.url}}">
+                                    Read article 
+                                    <span class="next-arrow"><i class="fas fa-arrow-right"></i></span>
+                                </a>
+                                <span class="post-date d-none d-md-inline-block" datetime="{{ post.date | date: "%Y-%m-%d" }}">Publised {{ post.date | date: "%B %-d, %Y" }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                {% if paginator.total_pages > 1 %}
+                <div class="paginator">
+                    <div class="row align-items-center">
+                        <div class="col-sm-6">
+                            <h2>
+                                <span>Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+                            </h2>
+                        </div>
+
+                        <div class="col-sm-6 d-flex justify-content-end">
+                            {% if paginator.previous_page %}
+                            <a class="arrows paginator-previous" href="{{ paginator.previous_page_path | prepend: site.baseurl }}" ><span class="arrow"><i class="fas fa-arrow-left"></i></span><span>Previous Page</span></a>
+                            {% endif %}
+                            
+                            {% if paginator.next_page %}
+                            <a class="arrows paginator-next" href="{{ paginator.next_page_path | prepend: site.baseurl }}"><span>Next page</span><span class="arrow"><i class="fas fa-arrow-right"></i></span></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+
+            </div>
+
+            <div class="col-lg-4">
+                {% include sidebar.html %}
+            </div>    
+
+        </div>
+    </div>
+</div>
+

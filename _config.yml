@@ -1,0 +1,61 @@
+#
+# Theme    : Hyde
+# Version  : 1.0
+# Author   : beingeorge
+# Support  : hello@beingeorge.com
+# 
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+#
+# Refer Jekyll Documentation for more info. https://jekyllrb.com/docs/
+#
+#
+# Site title
+title: "Hyde"
+#
+
+# A description of your site
+description: "Hyde is a bold theme for the Jekyll blogging platform. Available for purchase at ThemeForest.net."
+
+# The subpath of your site
+# Leave baseurl blank when you run it in local
+baseurl:
+# baseurl: https://beingeorge.com/hyde
+
+# In this theme static CSS is not used. 
+sass:
+  sass_dir: _sass
+
+# The base hostname & protocol of your site for where absolute urls are needed
+url: "http://beingeorge.com"
+
+# Site navigation - list your url with text and the url (Path)
+navigation:
+- text: Home
+  url: /
+- text: Blog
+  url: /blog/
+- text: Archives
+  url: /tags/
+
+# Author Info
+author_name: "Edward Hyde"
+author_bio: "Edward Hyde is often compared to animals, implying that he is not a fully evolved human being."
+author_url:  "http://beingeorge.com"
+author_image: author.jpg
+
+# Social links
+facebook_username: "username"
+twitter_username: "username"
+googleplus_username: "username"
+codepen_username: "username"
+dribbble_uername: "username"
+instagram_username: "username"
+pinterest_username: "username"
+linkedin_username: "username"
+
+# http://jekyllrb.com/docs/pagination/
+paginate: 5
+paginate_path: '/pages/page:num/'
+plugins: [jekyll-paginate]
+
