@@ -19,7 +19,7 @@ description: "Hyde is a bold theme for the Jekyll blogging platform. Available f
 
 # The subpath of your site
 # Leave baseurl blank when you run it in local
-baseurl: https://joijoide.github.io
+# baseurl: https://joijoide.github.io
 # baseurl: https://joijoide.github.io
 
 # In this theme static CSS is not used. 
