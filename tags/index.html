@@ -24,7 +24,8 @@ title: Archives
                     <h2 class="panel-title mb-3 ">{{ tag }}</h2>
                     <ul>
                     {% for post in site.tags[tag] %}
-                        <li class="pb-2"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> <span>{{ post.date | date: "%B %-d, %Y" }}</span></li>
+                        <!-- <li class="pb-2"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> <span>{{ post.date | date: "%B %-d, %Y" }}</span></li> -->
+                        <li class="pb-2"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> </li>
                     {% endfor %}
                     </ul>
                 </div>

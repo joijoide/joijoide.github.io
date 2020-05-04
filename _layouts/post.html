@@ -18,7 +18,7 @@ layout: default
                                     <span>{{page.read_time}}</span>
                                 </span>
                                 </li>
-                                <li>Published <span datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</span></li>
+                                <!-- <li>Published <span datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</span></li> -->
                             </ul>
                         </div>
 
@@ -77,7 +77,7 @@ layout: default
                                     <a href="{{ site.baseurl }}{{page.previous.url}}" class="nav-inside">
                                         <span>Previous</span>
                                         <h5 class="nav-title">{{page.previous.title}}</h5>
-                                        <p class="nav-date">{{page.previous.date | date: "%B %-d, %Y"}}</p>
+                                        <!-- <p class="nav-date">{{page.previous.date | date: "%B %-d, %Y"}}</p> -->
                                     </a>
                                 </div>
                                 
@@ -90,7 +90,7 @@ layout: default
                                         <a href="{{ site.baseurl }}{{page.next.url}}">
                                             <span class="nav-before">Next</span>
                                             <h5 class="nav-title">{{page.next.title}}</h5>
-                                            <p class="nav-date">{{page.next.date | date: "%B %-d, %Y"}}</p>
+                                            <!-- <p class="nav-date">{{page.next.date | date: "%B %-d, %Y"}}</p> -->
                                         </a>
                                     </div>
                                 </div>

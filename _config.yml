@@ -1,14 +1,4 @@
-#
-# Theme    : Hyde
-# Version  : 1.0
-# Author   : beingeorge
-# Support  : hello@beingeorge.com
-# 
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-#
-# Refer Jekyll Documentation for more info. https://jekyllrb.com/docs/
-#
+
 #
 # Site title
 title: "Joijoide"
@@ -27,7 +17,7 @@ sass:
   sass_dir: _sass
 
 # The base hostname & protocol of your site for where absolute urls are needed
-url: "http://beingeorge.com"
+url: "http://joijoide.com"
 
 # Site navigation - list your url with text and the url (Path)
 navigation:
@@ -41,7 +31,7 @@ navigation:
 # Author Info
 author_name: "Edward Hyde"
 author_bio: "Edward Hyde is often compared to animals, implying that he is not a fully evolved human being."
-author_url:  "http://beingeorge.com"
+author_url:  "http://joijoide.com"
 author_image: author.jpg
 
 # Social links

@@ -12,7 +12,8 @@
         <h2 class="panel-title mb-3">Recent Posts</h2>
         <ul>
             {% for post in site.posts limit:5 %}
-            <li class="pb-3"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> <span>{{ post.date | date: "%B %-d, %Y" }}</span></li>
+            <!-- <li class="pb-3"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> <span>{{ post.date | date: "%B %-d, %Y" }}</span></li> -->
+            <li class="pb-3"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> </li>
             {% endfor %}
         </ul>
     </div>
